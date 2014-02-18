@@ -1,0 +1,104 @@
+$sizes: ("2" 2px) ("5" 5px) ("10" 10px) ("20" 20px) ("30" 30px) ("40" 40px) ("50" 50px) ("60" 60px) ("70" 70px) ("80" 80px) ("90" 90px) ("100" 100px) ("125" 125px) ("150" 150px) ("200" 200px);
+$sides: ("t" top), ("r" right), ("b" bottom), ("l" left);
+
+.pt0 {
+	padding-top: 0 !important;
+}
+.mt0 {
+	margin-top: 0 !important;
+}
+.pr0 {
+	padding-right: 0 !important;
+}
+.mr0 {
+	margin-right: 0 !important;
+}
+.pb0 {
+	padding-bottom: 0 !important;
+}
+.mb0 {
+	margin-bottom: 0 !important;
+}
+.pl0 {
+	padding-left: 0 !important;
+}
+.ml0 {
+	margin-left: 0 !important;
+}
+.pa0 {
+	padding: 0 !important;
+}
+.pv0 {
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+}
+.ph0 {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+.ma0 {
+	margin: 0 !important;
+}
+.mv0 {
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+}
+.mh0 {
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+}
+
+@each $size-tupple in $sizes {
+	$label: nth($size-tupple, 1);
+	$size: nth($size-tupple, 2);
+
+	@each $side-tupple in $sides {
+		$lbl: nth($side-tupple, 1);
+		$side: nth($side-tupple, 2);
+
+		.p#{$lbl}#{$label} {
+			padding-#{$side}: $size;
+		}
+		.m#{$lbl}#{$label} {
+			margin-#{$side}: $size;
+		}
+	}
+
+	.pa#{$label} {
+		padding: $size;
+	}
+	.pv#{$label} {
+		padding-top: $size;
+		padding-bottom: $size;
+	}
+	.ph#{$label} {
+		padding-left: $size;
+		padding-right: $size;
+	}
+
+	.ma#{$label} {
+		margin: $size;
+	}
+	.mv#{$label} {
+		margin-top: $size;
+		margin-bottom: $size;
+	}
+	.mh#{$label} {
+		margin-left: $size;
+		margin-right: $size;
+	}
+}
+
+/* table layout */
+
+.row {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.row > *,
+.col {
+  display: table-cell;
+  vertical-align: top;
+}

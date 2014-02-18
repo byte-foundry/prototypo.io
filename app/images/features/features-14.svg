@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="280px"
+	 height="200px" viewBox="0 0 280 200" enable-background="new 0 0 280 200" xml:space="preserve">
+<rect x="0" y="0" fill="#FFFFFF" width="280" height="200" />
+<g id="Calque_1">
+	<g>
+		<path fill="#666666" d="M218.074,151.27c0,2.782-2.255,5.037-5.037,5.037H66.963c-2.782,0-5.037-2.255-5.037-5.037V47.73
+			c0-2.782,2.255-5.037,5.037-5.037h146.074c2.782,0,5.037,2.255,5.037,5.037V151.27z"/>
+		<path fill="#FFFFFF" d="M213.037,99.5c0,2.009-1.629,3.638-3.638,3.638l0,0c-2.009,0-3.638-1.628-3.638-3.638l0,0
+			c0-2.009,1.629-3.638,3.638-3.638l0,0C211.408,95.862,213.037,97.491,213.037,99.5L213.037,99.5z"/>
+		<path fill="#FFFFFF" d="M69.09,99.5c0,0.71-0.576,1.287-1.287,1.287l0,0c-0.712,0-1.287-0.577-1.287-1.287l0,0
+			c0-0.71,0.575-1.287,1.287-1.287l0,0C68.514,98.213,69.09,98.79,69.09,99.5L69.09,99.5z"/>
+		<rect x="73" y="54" fill="#00C4D6" width="128" height="91"/>
+		<polygon opacity="0.1" fill="#FFFFFF" points="201,145.113 73.119,54 201,54 			"/>
+		<rect x="113.907" y="73.252" fill="none" width="94.771" height="70.892"/>
+		<text transform="matrix(1 0 0 1 113.9082 120.9351)" fill="#FF725E" font-family="'MyriadPro-Bold'" font-size="67.1608">A</text>
+	</g>
+</g>
+<g id="Calque_3">
+	<defs>
+		<rect id="SVGID_1329_" x="-2099" y="343" width="1400" height="869"/>
+	</defs>
+	<clipPath id="SVGID_226_">
+		<use xlink:href="#SVGID_1329_"  overflow="visible"/>
+	</clipPath>
+</g>
+<g id="Calque_6">
+</g>
+</svg>
