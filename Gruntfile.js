@@ -15,6 +15,12 @@ module.exports = function (grunt) {
 	// Time how long tasks take. Can help when optimizing build times
 	require('time-grunt')(grunt);
 
+	// loading aws-config is optional
+	var awsConfig;
+	try {
+		awsConfig = grunt.file.readJSON('grunt-aws.json');
+	} catch( e ) {}
+
 	// Define the configuration for all the tasks
 	grunt.initConfig({
 
@@ -244,7 +250,17 @@ module.exports = function (grunt) {
 			}
 		},
 
-
+		// embeds images in stylesheet
+		imageEmbed: {
+			dist: {
+				options: {
+					maxImageSize: 0,
+					deleteAfterEncoding: true
+				},
+				src: [ '<%= yeoman.dist %>/styles/main.css' ],
+				dest: '<%= yeoman.dist %>/styles/main.css'
+			}
+		},
 
 		// Run some tasks in parallel to speed up build process
 		concurrent: {
@@ -262,6 +278,68 @@ module.exports = function (grunt) {
 				//'imagemin',
 				'svgmin'
 			]
+		},
+
+		// allow dist folder to be uploaded to s3
+		aws: awsConfig,
+		s3: {
+			options: {
+				key: '<%= aws.key %>',
+				secret: '<%= aws.secret %>',
+				bucket: '<%= aws.bucket %>',
+				access: 'public-read'
+			},
+			dist: {
+				upload: [{
+					src: '<%= yeoman.dist %>/index.html',
+					dest: 'index.html',
+					options: { gzip: true }
+				}, {
+					src: '<%= yeoman.dist %>/images/*.{png,jpg,svg}',
+					dest: 'images/',
+					options: {
+						gzip: false,
+						headers: {
+							// Two Year cache policy (1000 * 60 * 60 * 24 * 730)
+							'Cache-Control': 'max-age=630720000, public',
+							'Expires': new Date(Date.now() + 63072000000).toUTCString(),
+						}
+					}
+				}, {
+					src: '<%= yeoman.dist %>/scripts/*.js',
+					dest: 'scripts/',
+					options: {
+						gzip: true,
+						headers: {
+							// Two Year cache policy (1000 * 60 * 60 * 24 * 730)
+							'Cache-Control': 'max-age=630720000, public',
+							'Expires': new Date(Date.now() + 63072000000).toUTCString(),
+						}
+					}
+				}, {
+					src: '<%= yeoman.dist %>/styles/*.css',
+					dest: 'styles/',
+					options: {
+						gzip: true,
+						headers: {
+							// Two Year cache policy (1000 * 60 * 60 * 24 * 730)
+							'Cache-Control': 'max-age=630720000, public',
+							'Expires': new Date(Date.now() + 63072000000).toUTCString(),
+						}
+					}
+				}, {
+					src: '<%= yeoman.dist %>/favicon.ico',
+					dest: 'favicon.ico',
+					options: { headers: {
+						// One week cache policy (1000 * 60 * 60 * 24 * 7)
+						'Cache-Control': 'max-age=604800000, public',
+						'Expires': new Date(Date.now() + 604800000).toUTCString(),
+					}}
+				}, {
+					src: '<%= yeoman.dist %>/robots.txt',
+					dest: 'robots.txt'
+				}]
+			}
 		}
 	});
 
@@ -294,6 +372,7 @@ module.exports = function (grunt) {
 		'cssmin',
 		'uglify',
 		'copy:dist',
+		'imageEmbed:dist',
 		'rev',
 		'usemin'/*,
 		'htmlmin'*/
