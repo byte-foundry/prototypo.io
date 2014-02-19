@@ -22,12 +22,23 @@ body {
 }
 
 .h0 {
-	font-size: 4.2rem;
+	font-size: 2.369rem;
 }
 
 h4,
 .h4 {
-	font-size: 1.5rem;
+	font-size: 1.06rem;
+}
+
+@media only screen and (min-width: 600px) {
+	.h0 {
+		font-size: 4.2rem;
+	}
+
+	h4,
+	.h4 {
+		font-size: 1.5rem;
+	}
 }
 
 *,
@@ -57,7 +68,7 @@ header .col {
 }
 
 .header {
-	padding: 120px 0 100px 70px;
+	padding: 120px 0 100px 60px;
 
 	background-image: url(../images/lettres-bleu.svg);
 	background-size: 130%;
@@ -167,6 +178,7 @@ header .col {
 	}
 
 	.row .row .col {
+		display: block;
 		height: 100%;
 
 		border: 10px solid transparent;
@@ -189,6 +201,12 @@ header .col {
 		padding: 0 30px 10px;
 
 		text-align: center;
+	}
+}
+
+@media (min-device-width: 600px) {
+	.summary .row .row .col {
+		display: table-cell;
 	}
 }
 
