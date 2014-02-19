@@ -43,6 +43,15 @@ a {
 
 /* page styles */
 
+header .col {
+	display: block;
+}
+@media (min-device-width: 960px) {
+	header .col {
+		display: table-cell;
+	}
+}
+
 .logo {
 	background-image: url(../images/logo.svg);
 }
@@ -60,11 +69,10 @@ a {
 }
 
 .elsewhere {
-	max-width: 800px;
+	max-width: 400px;
 
 	a {
 		position: relative;
-		display: inline-block;
 
 		padding-bottom: 50%;
 
@@ -107,9 +115,13 @@ a {
 	}
 }
 
-@media (min-device-width: 768px) {
-	.elsewhere a {
-		padding-bottom: 25%;
+@media (min-device-width: 600px) {
+	.elsewhere {
+		max-width: 800px;
+
+		a {
+			padding-bottom: 25%;
+		}
 	}
 }
 
@@ -142,7 +154,21 @@ a {
 	background-image: url(../images/interface.jpg);
 	background-size: cover;
 
-	.col {
+	.wrapper {
+		max-width: 600px;
+	}
+
+	.wrapper > .row > .col {
+		display: block;
+	}
+
+	.row {
+		height: 100%;
+	}
+
+	.row .row .col {
+		height: 100%;
+
 		border: 10px solid transparent;
 		background-clip: padding-box;
 	}
@@ -163,6 +189,15 @@ a {
 		padding: 0 30px 10px;
 
 		text-align: center;
+	}
+}
+
+@media (min-device-width: 960px) {
+	.summary .wrapper {
+		max-width: 960px;
+	}
+	.summary > .wrapper > .row > .col {
+		display: table-cell;
 	}
 }
 
@@ -273,21 +308,30 @@ a {
 }
 
 .email {
-	background-image: url(../images/mail.svg);
-	background-position: center left;
-	background-size: auto 40%;
-
 	input {
-		display: inline-block;
+		margin-bottom: 5px;
 
 		border-radius: 4px;
 
 		&[type="text"] {
-			width: 300px;
-
 			border: none;
 			background-color: $grey;
 			color: $black;
+		}
+	}
+}
+@media (min-device-width: 960px) {
+	.email {
+		background-image: url(../images/mail.svg);
+		background-position: center left;
+		background-size: auto 40%;
+
+		input {
+			display: inline-block;
+
+			&[type="text"] {
+				width: 300px;
+			}
 		}
 	}
 }
