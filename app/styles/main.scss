@@ -326,6 +326,8 @@ header .col {
 		background-position: center left;
 		background-size: auto 40%;
 
+		transition: background-position .6s;
+
 		input {
 			display: inline-block;
 

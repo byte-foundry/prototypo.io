@@ -6,12 +6,12 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Prototypo | The font creation</title>
+		<title>Prototypo | Streamlining font creation</title>
 		<meta name="description" content="Prototypo is a type-design application that makes font creation faster and easier.">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<link href='http://fonts.googleapis.com/css?family=Merriweather+Sans:700,400,700italic,800italic' rel='stylesheet' type='text/css'>
-		<!-- build:css styles/vendor.css -->
+		<!-- b uild:css styles/vendor.css -->
 		<!-- bower:css -->
 		<!-- endbower -->
 		<!-- endbuild -->
@@ -29,7 +29,7 @@
 			<div class="logo col large-one-third bg-black"><span class="visuallyhidden">logo "P"</span></div>
 			<div class="header col large-two-thirds">
 				<h1 class="mb0 txt-red">Prototypo</h1>
-				<h2 class="h1 txt-blue italic"><i>The font generator</i></h2>
+				<h2 class="h1 txt-blue italic"><i>Streamlining font creation</i></h2>
 			</div>
 		</header>
 
@@ -71,7 +71,7 @@
 
 		<section class="why pv100">
 			<p class="wrapper narrow h1 text-center txt-green">
-				Type design should not require years of studying and months of creation.
+				Starting a font design should not require years of studying and months of creation.
 			</p>
 		</section>
 
@@ -91,7 +91,10 @@
 			</div>
 		</section>
 
-		<section class="summary pv125">
+		<section class="summary pv125"
+			-data-top-bottom="background-position: center -60%;"
+			-data-bottom-top="background-position: center 60%;"
+		>
 			<div class="wrapper narrow">
 				<div class="row">
 					<div class="col large-one-half">
@@ -129,8 +132,20 @@
 		<section class="crowdfunding bg-blue pv150 arrow-after">
 			<div class="wrapper">
 				<div class="grid">
-					<div class="grid-item large-one-fourth mb40 text-center">
-						<img src="images/kickstarter.svg" alt="Crowdfunding">
+					<div class="grid-item large-one-fourth mb40">
+						<div style="width: 250px; height: 400px; margin: 0 auto; position: relative; overflow: hidden;">
+							<img src="images/coin-2.svg" alt="Crowdfunding"
+								style="position: absolute; width: 100%; bottom: 0;"
+							/>
+							<img src="images/coin-1.svg" alt="Crowdfunding"
+								style="position: absolute; width: 100%; top: 0; transition: top 0.4s; -webkit-transition: top 0.4s;"
+								data-0="top: !0;"
+								data-center-center="top: !100%"
+							/>
+							<img src="images/coin-3.svg" alt="Crowdfunding"
+								style="position: absolute; width: 100%; bottom: 0;"
+							/>
+						</div>
 					</div>
 					<div class="grid-item large-three-fourths">
 						<p class="h3 mb0">
@@ -140,7 +155,7 @@
 							with your help!
 						</p>
 						<p class="h4">
-							Prototypo is currently being developped, <a href="https://github.com/byte-foundry/prototypo">in the open</a>.
+							Prototypo is currently being developped, <a target="_blank" href="https://github.com/byte-foundry/prototypo">in the open</a>.
 							We will soon release the beta version and start a crowdfunding campaign to support the development of version 1.0
 						</p>
 					</div>
@@ -206,7 +221,10 @@
 			</div>
 		</section>
 
-		<section id="newsletter" class="email">
+		<section id="newsletter" class="email"
+			data-0="background-position: !-40% center"
+			data-center-top="background-position: !0% center"
+		>
 			<div id="subscribed" class="pv80">
 				<div class="wrapper cf">
 					<div class="float-right large-three-fourths">
@@ -244,6 +262,7 @@
 		<!-- bower:js -->
 		<script src="bower_components/jquery/dist/jquery.js"></script>
 		<script src="bower_components/fitvids/jquery.fitvids.js"></script>
+		<script src="bower_components/skrollr/src/skrollr.js"></script>
 		<!-- endbower -->
 		<!-- endbuild -->
 
@@ -259,7 +278,7 @@
 			/* jshint ignore:end */
 		</script>
 
-		<!-- build:js({app,.tmp}) scripts/main.js -->
+		<!-- b uild:js({app,.tmp}) scripts/main.js -->
 		<!-- endbuild -->
 
 		<script>
@@ -272,6 +291,10 @@
 					$('html, body').animate({
 						scrollTop: $('#newsletter').offset().top
 					}, 1200);
+				});
+
+				skrollr.init({
+					forceHeight: false
 				});
 			});
 			/* jshint ignore:end */
