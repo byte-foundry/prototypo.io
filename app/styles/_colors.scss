@@ -1,0 +1,24 @@
+/* Colors & color helpers */
+
+$black: #3b3b3b;
+$red: #ff725e;
+$blue: #00c4d6;
+$green: #49e4a9;
+$yellow: #f5e462;
+$beige: #c7b299;
+$grey: #e6e6e6;
+
+$colors: ("black" $black) ("red" $red) ("blue" $blue) ("green" $green) ("yellow" $yellow) ("beige" $beige) ("grey" $grey);
+
+@each $color-tupple in $colors {
+	$label: nth($color-tupple, 1);
+	$color: nth($color-tupple, 2);
+
+	.txt-#{$label} {
+		color: $color;
+	}
+
+	.bg-#{$label} {
+		background-color: $color;
+	}
+}

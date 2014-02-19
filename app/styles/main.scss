@@ -1,4 +1,5 @@
 @import "plus";
+@import "colors";
 
 /* Cardinal adjustments */
 
@@ -39,34 +40,6 @@ h4,
 a {
 	color: inherit;
 }
-
-/* Colors & color helpers */
-
-$black: #3b3b3b;
-$red: #ff725e;
-$blue: #00c4d6;
-$green: #49e4a9;
-$yellow: #f5e462;
-$beige: #c7b299;
-$grey: #e6e6e6;
-
-.txt-black { color: $black; }
-.txt-red { color: $red; }
-.txt-blue { color: $blue; }
-.txt-green { color: $green; }
-.txt-yellow { color: $yellow; }
-.txt-beige { color: $beige; }
-.txt-white { color: white; }
-.txt-grey { color: $grey; }
-
-.bg-black { background-color: $black; }
-.bg-red { background-color: $red; }
-.bg-blue { background-color: $blue; }
-.bg-green { background-color: $green; }
-.bg-yellow { background-color: $yellow; }
-.bg-beige { background-color: $beige; }
-.bg-white { background-color: white; }
-.bg-grey { background-color: $grey; }
 
 /* page styles */
 
@@ -170,9 +143,8 @@ $grey: #e6e6e6;
 	background-size: cover;
 
 	.col {
-		padding: 10px;
-
-		background-clip: content-box;
+		border: 10px solid transparent;
+		background-clip: padding-box;
 	}
 
 	img {
