@@ -57,7 +57,7 @@ a {
 header .col {
 	display: block;
 }
-@media (min-device-width: 960px) {
+@media only screen and (min-width: 960px) {
 	header .col {
 		display: table-cell;
 	}
@@ -126,7 +126,7 @@ header .col {
 	}
 }
 
-@media (min-device-width: 600px) {
+@media only screen and (min-width: 600px) {
 	.elsewhere {
 		max-width: 800px;
 
@@ -204,13 +204,13 @@ header .col {
 	}
 }
 
-@media (min-device-width: 600px) {
+@media only screen and (min-width: 600px) {
 	.summary .row .row .col {
 		display: table-cell;
 	}
 }
 
-@media (min-device-width: 960px) {
+@media only screen and (min-width: 960px) {
 	.summary .wrapper {
 		max-width: 960px;
 	}
@@ -338,7 +338,7 @@ header .col {
 		}
 	}
 }
-@media (min-device-width: 960px) {
+@media only screen and (min-width: 960px) {
 	.email {
 		background-image: url(../images/mail.svg);
 		background-position: center left;
