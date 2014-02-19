@@ -328,8 +328,8 @@ module.exports = function (grunt) {
 						}
 					}
 				}, {
-					src: '<%= yeoman.dist %>/favicon.ico',
-					dest: 'favicon.ico',
+					src: '<%= yeoman.dist %>/*.{jpg,ico}',
+					dest: '/',
 					options: { headers: {
 						// One week cache policy (1000 * 60 * 60 * 24 * 7)
 						'Cache-Control': 'max-age=604800000, public',

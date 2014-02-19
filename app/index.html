@@ -2,15 +2,20 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<title>Prototypo | Streamlining font creation</title>
-		<meta name="description" content="Prototypo is a type-design application that makes font creation faster and easier.">
+		<meta property="og:title" content="Prototypo | Streamlining font creation">
+		<meta property="og:site_name" content="Prototypo">
+		<meta property="og:url" content="http://www.prototypo.io">
+		<meta name="description" property="og:description" content="Prototypo is a type-design application that makes font creation faster and easier.">
+		<meta property="og:image" content="http://www.prototypo.io/screenshot.jpg">
+		<meta property="og:locale" content="en_US">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-		<link href='http://fonts.googleapis.com/css?family=Merriweather+Sans:700,400,800italic' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Merriweather+Sans:700,400,700italic' rel='stylesheet' type='text/css'>
 		<!-- b uild:css styles/vendor.css -->
 		<!-- bower:css -->
 		<!-- endbower -->
@@ -71,7 +76,7 @@
 
 		<section class="why pv100">
 			<p class="wrapper narrow h1 text-center txt-green">
-				Starting a font design should not require years of studying and months of creation.
+				Type design should not be a time consuming and repetitive activity.
 			</p>
 		</section>
 
@@ -253,7 +258,7 @@
 			<div class="wrapper text-center">
 				<img src="images/bytefoundry.svg" width="180" alt="Byte Foundry logo">
 				<p class="h4 mt20">Cheers!</p>
-				<p>© Byte Foundry 2014 | by <a href="http://twitter.com/_____________y">YM</a> &amp; <a href="http://twitter.com/louis_remi">LRB</a> with love</p>
+				<p>© Byte Foundry 2014 | by <a target="_blank" href="http://twitter.com/_____________y">YM</a> &amp; <a target="_blank" href="http://twitter.com/louis_remi">LRB</a> with love</p>
 			</div>
 		</footer>
 
@@ -287,12 +292,22 @@
 				// Target your .container, .wrapper, .post, etc.
 				$('#video').fitVids();
 
+				// scroll to newsletter
 				$('#scroll').click(function() {
 					$('html, body').animate({
 						scrollTop: $('#newsletter').offset().top
 					}, 1200);
 				});
 
+				// track click on outbount links
+				$(document.body).on('click', '[target="_blank"]', function(e) {
+					ga('send', 'event', 'outbound', 'click', e.target.href, { hitCallback:
+						function() { document.location = e.target.href; }
+					});
+					return false;
+				});
+
+				// enable skrollr only on desktop
 				if(!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)){
 					skrollr.init({
 						forceHeight: false
