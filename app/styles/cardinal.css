@@ -236,7 +236,7 @@ blockquote cite a {
  * Add word wrapping and hyphenation to common elements
  */
 
-caption,
+/*caption,
 p,
 table,
 textarea,
@@ -247,7 +247,7 @@ th {
     -moz-hyphens:    auto;
     -ms-hyphens:     auto;
     hyphens:         auto;
-}
+}*/
 
 /**
  * The parent of every `.crossbars` element must have `overflow:
