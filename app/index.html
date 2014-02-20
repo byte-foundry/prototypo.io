@@ -301,10 +301,7 @@
 
 				// track click on outbount links
 				$(document.body).on('click', '[target="_blank"]', function(e) {
-					ga('send', 'event', 'outbound', 'click', e.target.href, { hitCallback:
-						function() { document.location = e.target.href; }
-					});
-					return false;
+					ga( 'send', 'event', 'outbound', 'click', e.target.href );
 				});
 
 				// enable skrollr only on desktop
