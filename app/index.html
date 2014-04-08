@@ -30,13 +30,6 @@
 			<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 		<![endif]-->
 
-		<a href="https://www.kickstarter.com/projects/599698621/prototypo-streamlining-font-creation"
-			title="We are on Kickstarter"
-			id="kickBadge"
-			style="position: fixed; top: 10px; right: 10px;">
-			<img src="images/kickBadge.png" alt="We are on Kickstarter" />
-		</a>
-
 		<header class="row">
 			<div class="logo col large-one-third bg-black"><span class="visuallyhidden">logo "P"</span></div>
 			<div class="header col large-two-thirds">
@@ -47,7 +40,15 @@
 
 		<section class="video bg-red pv125">
 			<div class="wrapper">
-				<div id="video">
+				<div id="video" style="position: relative;">
+
+					<a href="https://www.kickstarter.com/projects/599698621/prototypo-streamlining-font-creation"
+						title="We are on Kickstarter"
+						id="kickBadge"
+						style="position: absolute; z-index: 100; top: -100px; left: -50px;">
+						<img src="images/kickBadge.png" alt="We are on Kickstarter" />
+					</a>
+
 					<iframe src="http://player.vimeo.com/video/86406495?title=0&amp;byline=0&amp;portrait=0&amp;color=90ee90&amp;background=90ee90" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen>
 						Prototypo is a type-design application that streamlines font creation.
 					</iframe>
