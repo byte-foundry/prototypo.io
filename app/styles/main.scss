@@ -65,6 +65,8 @@ header .col {
 
 .logo {
 	background-image: url(../images/logo.svg);
+	background-repeat: no-repeat;
+	background-position: 46% center;
 }
 
 .header {
@@ -356,7 +358,8 @@ header .col {
 	}
 }
 
-#subscribed {
+#subscribed,
+#donated {
 	.thanks {
 		display: none;
 
