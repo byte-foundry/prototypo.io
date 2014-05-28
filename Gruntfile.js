@@ -163,7 +163,7 @@ module.exports = function (grunt) {
 			options: {
 				dest: '<%= yeoman.dist %>'
 			},
-			html: '<%= yeoman.app %>/index.html'
+			html: '<%= yeoman.app %>/*.html'
 		},
 
 		// Performs rewrites based on rev and the useminPrepare configuration
@@ -291,8 +291,8 @@ module.exports = function (grunt) {
 			},
 			dist: {
 				upload: [{
-					src: '<%= yeoman.dist %>/index.html',
-					dest: 'index.html',
+					src: '<%= yeoman.dist %>/*.html',
+					dest: '/',
 					options: { gzip: true }
 				}, {
 					src: '<%= yeoman.dist %>/images/*.{png,jpg,svg}',
