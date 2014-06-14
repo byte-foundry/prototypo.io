@@ -76,9 +76,27 @@ header .col {
 	background-size: 130%;
 }
 
-.video {
+.donate {
 	background-image: url(../images/transition-01.svg);
 	background-position: center bottom;
+	display: none;
+}
+
+.test {
+	background-image: url(../images/test-dev-bg.svg);
+	border-bottom: 2em solid $green;
+	.btn {
+		max-width: 50%;
+		padding: 3em;
+		border-radius:10px;
+		text-decoration: none;
+		font-weight: bold;
+		box-shadow: 3px 3px 15px #a1a1a1;
+		transition: all 0.5s;
+		&:hover {
+			box-shadow: 10px 10px 15px #a1a1a1;
+		}
+	}
 }
 
 .elsewhere {
@@ -136,7 +154,58 @@ header .col {
 			padding-bottom: 25%;
 		}
 	}
+	#fixed {
+		position: fixed;
+		right: 0;
+
+		z-index: 101;
+
+		a {
+			min-height: 40px;
+			min-width: 40px;
+
+			display: block;
+
+			margin: 1px;
+
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: 25px;
+
+		}
+
+		.bg-black {
+			background-color: lighten( $black, 10% );
+		}
+
+		.twitter {
+			background-image: url(../images/twitter.svg);
+			&:hover {
+				background-color: $blue;
+			}
+		}
+		.facebook {
+			background-image: url(../images/facebook.svg);
+			&:hover {
+				background-color: $red;
+			}
+		}
+		.blog {
+			background-image: url(../images/blog.svg);
+			&:hover {
+				background-color: $yellow;
+			}
+		}
+		.newsletter {
+			background-image: url(../images/newsletter.svg);
+			&:hover {
+				background-color: $green;
+			}
+		}
+	}
 }
+
+
 
 .why {
 	background-image: url(../images/lettres-vert.svg);
