@@ -382,7 +382,7 @@ header .col {
 	border-top-color: $green;
 }
 
-.email {
+.form-inline {
 	input {
 		margin-bottom: 5px;
 
@@ -402,13 +402,13 @@ header .col {
 		background-size: auto 40%;
 
 		transition: background-position .6s;
+	}
 
-		input {
-			display: inline-block;
+	.form-inline input {
+		display: inline-block;
 
-			&[type="text"] {
-				width: 300px;
-			}
+		&[type="text"] {
+			width: 300px;
 		}
 	}
 }

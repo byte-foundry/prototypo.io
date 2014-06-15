@@ -7,8 +7,9 @@ $green: #49e4a9;
 $yellow: #f5e462;
 $beige: #c7b299;
 $grey: #e6e6e6;
+$white: #FFF;
 
-$colors: ("black" $black) ("red" $red) ("blue" $blue) ("green" $green) ("yellow" $yellow) ("beige" $beige) ("grey" $grey);
+$colors: ("black" $black) ("red" $red) ("blue" $blue) ("green" $green) ("yellow" $yellow) ("beige" $beige) ("grey" $grey) ("white", $white);
 
 @each $color-tupple in $colors {
 	$label: nth($color-tupple, 1);

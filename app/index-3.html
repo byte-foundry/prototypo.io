@@ -4,22 +4,6 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
-	<!-- Google Analytics Content Experiment code -->
-	<script>/* jshint ignore:start */
-	function utmx_section(){}function utmx(){}(function(){var
-	k='73821086-3',d=document,l=d.location,c=d.cookie;
-	if(l.search.indexOf('utm_expid='+k)>0)return;
-	function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
-	indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
-	length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
-	'<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
-	'://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
-	'&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
-	valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
-	'" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
-	</script><script>window.utmx('url','A/B');</script>
-	<!-- End of Google Analytics Content Experiment code -->
-
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Prototypo | Streamlining font creation</title>
@@ -302,7 +286,6 @@ data-center-top="background-position: !0% center"
 <!-- bower:js -->
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/fitvids/jquery.fitvids.js"></script>
-<script src="bower_components/skrollr/src/skrollr.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
@@ -348,11 +331,6 @@ $(function(){
 	$(document.body).on('click', '[target="_blank"]', function(e) {
 		ga( 'send', 'event', 'outbound', 'click', e.target.href );
 	});
-
-	// enable skrollr only on desktop
-	if(!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)){
-		skrollr.init({forceHeight: false});
-	}
 });
 /* jshint ignore:end */
 </script>
