@@ -26,7 +26,7 @@
 		<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 	<![endif]-->
 
-	<div id="fixed" class="">
+	<!--<div id="fixed" class="">
 		<nav class="">
 			<a	target="_blank" href="https://twitter.com/prototypoApp"
 			title="Follow us on twitter"
@@ -50,7 +50,7 @@
 			>
 			</a>
 		</nav>
-	</div>
+	</div>-->
 
 	<header class="row">
 		<a class="logo col large-one-third bg-black" href="/"><span class="visuallyhidden">logo "P"</span></a>
@@ -78,13 +78,33 @@
 			</div>
 		</div>
 
-		<!--<div class="wrapper narrow pt40">
-			<p class="h2 text-center txt-yellow pb20">
-				Try the <a href="http://dev.prototypo.io/#/" target="_blank" class="button bg-yellow txt-red ph10 pv5">app</a> while we develop it.
-			</p>
-		</div>-->
+		<div id="elsewhere" class="wrapper narrow elsewhere pt40">
+			<nav class="grid grid-gutter-none">
+				<a	target="_blank" href="https://twitter.com/prototypoApp"
+				class="grid-item one-half medium-one-fourth twitter bg-blue"
+				>
+				<span class="visuallyhidden">Follow us on Twitter</span>
+				</a
+				><a	target="_blank" href="https://www.facebook.com/prototypoApp"
+				class="grid-item one-half medium-one-fourth facebook bg-beige"
+				>
+				<span class="visuallyhidden">Like us on Facebook</span>
+				</a
+				><a	target="_blank" href="https://www.kickstarter.com/projects/599698621/prototypo-streamlining-font-creation/posts"
+				class="grid-item one-half medium-one-fourth blog bg-yellow"
+				>
+				<span class="visuallyhidden">Read our blog</span>
+				</a
+				><a	href="#newsletter"
+				id="scroll"
+				class="grid-item one-half medium-one-fourth newsletter bg-green"
+				>
+				<span class="visuallyhidden">Subscribe to the newsletter</span>
+				</a>
+			</nav>
+		</div>
 
-		<div class="wrapper narrow">
+		<!--<div class="wrapper narrow">
 			<div class="grid pt70">
 				<div class="grid-item medium-one-third mb40">
 					<div style="width: 220px; height: 350px; margin: 0 auto; position: relative; overflow: hidden;">
@@ -101,19 +121,8 @@
 						/>
 					</div>
 				</div>
-				<div class="grid-item medium-two-thirds">
-					<p class="h4 mv20">
-						Prototypo is an online open-source application currently in development.
-					</p>
-					<p class="h4 mv20">
-						Many features are still missing, but your continued support allows us to improve it every day.
-					</p>
-					<p class="h4 mv20">
-						Try it <a href="http://dev.prototypo.io/#/" target="_blank" class="button pv5 ph10 bg-yellow txt-red">now</a>.
-					</p>
-				</div>
 			</div>
-		</div>
+		</div>-->
 	</section>
 
 	<section class="why pv100">
@@ -264,39 +273,12 @@ data-center-top="background-position: !0% center"
 
 <footer class="bg-yellow pv90">
 
+	<div class="wrapper text-center pt40">
+		<img src="images/bytefoundry.svg" width="180" alt="Byte Foundry logo">
+		<p class="h4 mt20">Cheers!</p>
+		<p>© Byte Foundry 2014 | by <a target="_blank" href="http://twitter.com/_____________y">YM</a> &amp; <a target="_blank" href="http://twitter.com/louis_remi">LRB</a> with love</p>
+	</div>
 
-	<div id="elsewhere" class="wrapper narrow elsewhere pt20 pb40">
-		<nav class="grid grid-gutter-none">
-			<a	target="_blank" href="https://twitter.com/prototypoApp"
-			class="grid-item one-half medium-one-fourth twitter bg-green"
-			>
-			<span class="visuallyhidden">Follow us on Twitter</span>
-			</a
-			><a	target="_blank" href="https://www.facebook.com/prototypoApp"
-			class="grid-item one-half medium-one-fourth facebook bg-beige"
-			>
-			<span class="visuallyhidden">Like us on Facebook</span>
-			</a
-			><a	target="_blank" href="https://www.kickstarter.com/projects/599698621/prototypo-streamlining-font-creation/posts"
-			class="grid-item one-half medium-one-fourth blog bg-blue"
-			>
-			<span class="visuallyhidden">Read our blog</span>
-			</a
-			><a	href="#newsletter"
-			id="scroll"
-			class="grid-item one-half medium-one-fourth newsletter bg-red"
-			>
-			<span class="visuallyhidden">Subscribe to the newsletter</span>
-		</a>
-	</nav>
-</div>
-
-
-<div class="wrapper text-center pt40">
-	<img src="images/bytefoundry.svg" width="180" alt="Byte Foundry logo">
-	<p class="h4 mt20">Cheers!</p>
-	<p>© Byte Foundry 2014 | by <a target="_blank" href="http://twitter.com/_____________y">YM</a> &amp; <a target="_blank" href="http://twitter.com/louis_remi">LRB</a> with love</p>
-</div>
 </footer>
 
 
@@ -304,7 +286,6 @@ data-center-top="background-position: !0% center"
 <!-- bower:js -->
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/fitvids/jquery.fitvids.js"></script>
-<script src="bower_components/skrollr/src/skrollr.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 
@@ -326,28 +307,31 @@ ga('create','UA-41962243-1');ga('send','pageview');
 <script>
 /* jshint ignore:start */
 $(function(){
-				// Target your .container, .wrapper, .post, etc.
-				$('#video').fitVids();
+	// Target your .container, .wrapper, .post, etc.
+	$('#video').fitVids();
 
-				// scroll to newsletter
-				$('#scroll').click(function() {
-					$('html, body').animate({
-						scrollTop: $('#newsletter').offset().top
-					}, 1200);
-				});
+	if ( window.location.hash === '#subscribed' ) {
+		// track subscribtions
+		ga('send', 'event', 'newsletter', 'subscribed');
 
-				// track click on outbount links
-				$(document.body).on('click', '[target="_blank"]', function(e) {
-					ga( 'send', 'event', 'outbound', 'click', e.target.href );
-				});
+		// fitvids causes viewport to shift away from hash desitnations.
+		$('html').css({
+			scrollTop: $('#subscribed').offset().top
+		});
+	}
 
-				// enable skrollr only on desktop
-				if(!(/Android|iPhone|iPad|iPod|BlackBerry|Windows Phone/i).test(navigator.userAgent || navigator.vendor || window.opera)){
-					skrollr.init({
-						forceHeight: false
-					});
-				}
-			});
+	// scroll to newsletter
+	$('#scroll').click(function() {
+		$('html').animate({
+			scrollTop: $('#newsletter').offset().top
+		}, 1200);
+	});
+
+	// track click on outbount links
+	$(document.body).on('click', '[target="_blank"]', function(e) {
+		ga( 'send', 'event', 'outbound', 'click', e.target.href );
+	});
+});
 /* jshint ignore:end */
 </script>
 
