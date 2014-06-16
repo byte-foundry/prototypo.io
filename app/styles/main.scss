@@ -58,6 +58,25 @@ a {
 
 /* page styles */
 
+#sponsor {
+	background-color: #2d2d2d;
+	text-decoration: none;
+	&:hover {
+		background-color: #1d1d1d;
+	}
+	p {
+		margin-bottom: 0;
+	}
+	img {
+		margin: 0 .6em;
+	}
+	.baseline {
+		margin-top: 10px;
+		font-style: italic;
+		font-weight: 400;
+	}
+}
+
 header .col {
 	display: block;
 }
