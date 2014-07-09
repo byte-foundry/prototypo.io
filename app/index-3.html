@@ -4,6 +4,22 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
+	<!-- Google Analytics Content Experiment code -->
+	<script>/* jshint ignore:start */
+	function utmx_section(){}function utmx(){}(function(){var
+	k='73821086-3',d=document,l=d.location,c=d.cookie;
+	if(l.search.indexOf('utm_expid='+k)>0)return;
+	function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
+	indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
+	length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
+	'<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
+	'://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
+	'&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
+	valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
+	'" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
+	</script><script>window.utmx('url','A/B');</script>
+	<!-- End of Google Analytics Content Experiment code -->
+
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Prototypo | Streamlining font creation</title>
@@ -15,7 +31,7 @@
 	<meta property="og:locale" content="en_US">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link href='http://fonts.googleapis.com/css?family=Merriweather+Sans:700,400,700italic' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Merriweather+Sans:700,400,700italic,300italic' rel='stylesheet' type='text/css'>
 	<!-- build:css(.tmp) styles/main.css -->
 	<link rel="stylesheet" href="styles/cardinal.css">
 	<link rel="stylesheet" href="styles/main.css">
@@ -58,14 +74,13 @@
 			<p class="baseline">Attend FOWD NYC from Nov 3-5 to learn a ton, get inspired, and meet amazing designers and front-end developers who share your passion for the web.</p>
 		</div>
 	</a>
-	
-	<header class="row" style="z-index: 10;">
-		<a class="logo col large-one-sixth bg-black" style="background-size: auto 70%;" href="/"><span class="visuallyhidden">logo "P"</span></a>
 
-		<div class="col large-five-sixths bg-white pl20 pv10">
-			<h1 class="h3 mb0 txt-red" style="display: inline;">Prototypo</h1>
-			&nbsp;
-			<h2 class="h3 txt-blue" style="display: inline;"><i>Streamlining font creation</i></h2>
+	<header class="row">
+		<a class="logo col large-one-third bg-black" href="/"><span class="visuallyhidden">logo "P"</span></a>
+
+		<div class="header col large-two-thirds">
+			<h1 class="mb0 txt-red">Prototypo</h1>
+			<h2 class="h1 txt-blue"><i>Streamlining font creation</i></h2>
 		</div>
 	</header>
 
@@ -74,7 +89,7 @@
 			<div id="video" style="position: relative;">
 				<a href="https://www.kickstarter.com/projects/599698621/prototypo-streamlining-font-creation"
 					target="_blank"
-					style="position: absolute; z-index: 10; top: -100px; right: -50px;">
+					style="position: absolute; z-index: 100; top: -100px; right: -50px;">
 					<img src="images/kick-badge.png" alt="Funded with Kickstarter" />
 				</a>
 
@@ -86,15 +101,30 @@
 			</div>
 		</div>
 
-		<div id="win" class="wrapper narrow pt70">
-			<img src="images/win.png" width="960" alt="Win an access">
-			<p class="text-center">Get a chance to access to the dev version by subscribing to our newsletter.<br/> Each week, we pick randomly 2 subscribers!</p>
-			<form action="http://sendy.kuem.me.uk/subscribe" method="POST" accept-charset="utf-8" class="form-inline text-center">
-				<input type="text" class="bg-grey" name="name" id="name" placeholder="name">
-				<input type="text" class="bg-grey" name="email" id="email" placeholder="email">
-				<input type="hidden" name="list" value="ytAwOnCM1u2l9ak9zwB7bw">
-				<input type="submit" class="button bg-yellow txt-dark" name="submit" id="submit" value="Subscribe">
-			</form>
+		<div id="elsewhere" class="wrapper narrow elsewhere pt40">
+			<nav class="grid grid-gutter-none">
+				<a	target="_blank" href="https://twitter.com/prototypoApp"
+				class="grid-item one-half medium-one-fourth twitter bg-blue"
+				>
+				<span class="visuallyhidden">Follow us on Twitter</span>
+				</a
+				><a	target="_blank" href="https://www.facebook.com/prototypoApp"
+				class="grid-item one-half medium-one-fourth facebook bg-beige"
+				>
+				<span class="visuallyhidden">Like us on Facebook</span>
+				</a
+				><a	target="_blank" href="https://www.kickstarter.com/projects/599698621/prototypo-streamlining-font-creation/posts"
+				class="grid-item one-half medium-one-fourth blog bg-yellow"
+				>
+				<span class="visuallyhidden">Read our blog</span>
+				</a
+				><a	href="#newsletter"
+				id="scroll"
+				class="grid-item one-half medium-one-fourth newsletter bg-green"
+				>
+				<span class="visuallyhidden">Subscribe to the newsletter</span>
+				</a>
+			</nav>
 		</div>
 
 		<!--<div class="wrapper narrow">
@@ -266,33 +296,7 @@ data-center-top="background-position: !0% center"
 
 <footer class="bg-yellow pv90">
 
-	<div id="elsewhere" class="wrapper narrow elsewhere">
-		<nav class="grid grid-gutter-none">
-			<a	target="_blank" href="https://twitter.com/prototypoApp"
-			class="grid-item one-half medium-one-fourth twitter bg-green"
-			>
-			<span class="visuallyhidden">Follow us on Twitter</span>
-			</a
-			><a	target="_blank" href="https://www.facebook.com/prototypoApp"
-			class="grid-item one-half medium-one-fourth facebook bg-beige"
-			>
-			<span class="visuallyhidden">Like us on Facebook</span>
-			</a
-			><a	target="_blank" href="https://www.kickstarter.com/projects/599698621/prototypo-streamlining-font-creation/posts"
-			class="grid-item one-half medium-one-fourth blog bg-blue"
-			>
-			<span class="visuallyhidden">Read our blog</span>
-			</a
-			><a	href="#win"
-			id="scroll"
-			class="grid-item one-half medium-one-fourth newsletter bg-red"
-			>
-			<span class="visuallyhidden">Subscribe to the newsletter</span>
-			</a>
-		</nav>
-	</div>
-
-	<div class="wrapper text-center pt60">
+	<div class="wrapper text-center pt40">
 		<img src="images/bytefoundry.svg" width="180" alt="Byte Foundry logo">
 		<p class="h4 mt20">Cheers!</p>
 		<p>© Byte Foundry 2014 | by <a target="_blank" href="http://twitter.com/_____________y">YM</a> &amp; <a target="_blank" href="http://twitter.com/louis_remi">LRB</a> with love</p>
