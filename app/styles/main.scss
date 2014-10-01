@@ -11,6 +11,8 @@ body {
 	color: white;
 	font-family: "Merriweather Sans", sans-serif;
 	line-height: 1.6;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 .wrapper {
@@ -449,6 +451,52 @@ header .col {
 		.thanks {
 			display: block;
 			opacity: 1;
+		}
+	}
+}
+
+// FAQ
+ul.toggle {
+	padding: 0;
+	color: white;
+	font-weight: normal;
+	li {
+		list-style: none;
+		margin-bottom: .5em;
+		label {
+			&:before {
+				content: "▸";
+			}
+			&:hover {
+				color: $red;
+			}
+		}
+		input:checked + label {
+			color: $red;
+			&:before {
+				content: "▾";
+			}
+		}
+		input {
+			display: none;
+		}
+		input:checked ~ .content {
+			transition: all 600ms ease;
+			max-height: 1000px;
+			padding-top: 1em;
+			padding-bottom: 1em;
+		}
+		.content {
+			max-height: 0px;
+			overflow: hidden;
+			div {
+				border-left: 4px solid $red;
+				background-color: white;
+				color: lighten($black, 8%);
+				padding: .5em;
+				padding-left: 1em;
+				font-size: .8em;
+			}
 		}
 	}
 }
